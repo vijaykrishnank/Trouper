@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Trouper</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+
+  <body ng-app="editProfileApp" ng-controller="myController">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+ <a class="navbar-brand" href="index.html"><img src="images/logo.png" style="width: 25%; height:25%; !important;"></img></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Events
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+                <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href ng-click="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container " style="padding-top: 25px;">
+     <h3>Edit your details:</h3>
+
+<form>
+  <div class="form-group">
+  <label for="example-text-input">First Name</label>
+    <input class="form-control" type="text" id="example-text-input" ng-model="fname">
+</div>
+<div class="form-group">
+  <label for="example-text-input">Last Name</label>
+    <input class="form-control" type="text" id="example-text-input" ng-model="lname">
+</div>
+<div class="form-group">
+    <label for="exampleSelect1">State</label>
+    <select class="form-control" id="exampleSelect1" ng-model="state" ng-options="x for x in state">
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1">Are you an organizer?</label>
+    <select class="form-control" id="exampleSelect1" ng-model="community">
+         <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleTextarea">About you</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="bio"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">Upload Image</label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" ng-model="image">
+    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+  </div>
+ <br><hr/><br>
+ <h3>Social Media Profiles</h3>
+ <div class="form-group">
+  <label for="example-url-input">Facebook</label>
+
+    <input class="form-control" type="url" id="example-url-input" ng-model="facebook">
+
+</div>
+ <div class="form-group">
+  <label for="example-url-input">Twitter</label>
+
+    <input class="form-control" type="url" id="example-url-input" ng-model="twitter">
+
+</div>
+ <div class="form-group">
+  <label for="example-url-input">Instagram</label>
+
+    <input class="form-control" type="url" id="example-url-input" ng-model="instgram">
+
+</div>
+ <div class="form-group">
+  <label for="example-url-input">Youtube</label>
+
+    <input class="form-control" type="url" id="example-url-input" ng-model="youtube">
+
+</div>
+  <button type="submit" class="btn btn-primary" ng-click="register()">Update</button>
+</form><br>
+          <!-- /.row -->
+
+    
+        <!-- /.col-lg-9 -->
+
+
+      <!-- /.row -->
+  
+  </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+
+<footer><div class="footer_part1">Do you <i class="em em-heart"></i> us?<br> <a href="http://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+<a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a><a href="http://www.snapchat.com" target="_blank" class="fa fa-snapchat-ghost"></a>
+<a href="http://www.instagram.com" target="_blank" class="fa fa-instagram"></a></div>
+<!-- Copyright part -->
+
+</footer><div class="copyright">&copy; Developed by Team 5 - ISTM 631 601: IS Design. All Rights Reserved.</div>
+      </div>
+      <!-- /.container -->
+
+<script>
+angular.module('editProfileApp', [])
+.controller('myController', function($scope, $http) {
+$scope.sessionEmail = localStorage.getItem("email");
+   $http.get(" URL ", {
+  params: {
+    email: $scope.sessionEmail
+  }
+})
+   .then(function (response) 
+   {
+   $scope.records = response.data;
+   $scope.fname = $scope.records.fname;
+   $scope.lname = $scope.records.lname;
+   $scope.bio = $scope.records.bio;
+   $scope.facebook = $scope.records.facebook;
+   $scope.twitter = $scope.records.twitter;
+   $scope.youtube = $scope.records.youtube;
+   $scope.instagram = $scope.records.instagram;
+   $scope.image = $scope.image;
+   });
+   
+   $http.get("to get states")
+   .then(function (response) 
+   {
+   $scope.state = response.data;
+   
+   
+   });
+   
+   
+   
+
+document.getElementById("exampleInputFile").addEventListener("change", readFile);
+   
+$scope.register = function () {
+
+var request = $http({
+    method: "post",
+    url: "",
+    data: {
+		firstname: $scope.fname,
+		lastname: $scope.lname,
+		state: $scope.state,
+		community: $scope.community,
+		bio: $scope.bio,
+		facebook: $scope.facebook,
+		twitter: $scope.twitter,
+		youtube: $scope.youtube,
+		instagram: $scope.instagram,
+		image: $scope.imagebase64
+    },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+}).then(function successCallback(response) {
+    // this callback will be called asynchronously
+	localStorage.setItem("email",$scope.email);
+	window.open("profile.html");
+    // when the response is available
+  });
+}
+
+function readFile() {
+
+  if (this.files && this.files[0]) {
+      console.log("in here");
+    var FR= new FileReader();
+    
+    FR.addEventListener("load", function(e) {
+     console.log(e.target.result);
+	 $scope.imagebase64 = e.target.result;
+
+    }); 
+    
+    FR.readAsDataURL( this.files[0] );
+  }
+  
+}
+
+$scope.logout = function() {
+localStorage.clear();
+window.close();
+}
+   
+})
+
+</script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

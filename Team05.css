@@ -1,0 +1,327 @@
+/* Global Body Styling */
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+body, html {
+height: 100%;
+margin: 0;
+}
+/* Side menu navigation styling */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* Emoji Size*/
+.special {
+   height: 3.5em !important;
+    width: 3.5em !important;
+}
+
+/* Menu Items Styling*/
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Hover styling for sidebar menu*/
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Side menun close cross button styling */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Responsive styling for previous generation mobile phones -  Feature Phones*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Responsive styling for current generation smart phones */
+@media only screen and (max-width: 768px) and (min-width: 300px)  {
+
+  .special {
+    height: 1.5em !important;
+    width: 1.5em !important;
+  }
+  
+  .sidenav a {
+	  font-size: 18px !important;
+  }
+  
+  .sidenav .closebtn {
+	  font-size: 30px !important;
+  }
+
+
+input[type=text], input[type=password] {
+    width: 80% !important;
+    padding: 15px;
+    margin: 5px 0 10px 0 !important;
+    display: inline-block;
+    border: solid;;
+    background: #f1f1f1;
+}
+
+.footer_part1 {
+  height: 14vh !important;
+}
+
+button {
+width: 50% !important;}
+}
+
+/* Responsive styling for ultra portable laptops and new generation Macbooks*/
+@media only screen and (max-width: 1350px) and (min-width: 1101px)  {
+	
+	.footer_part1 {
+  height: 18vh !important;
+}
+.sidenav a {
+	
+	font-size: 18px !important;
+}
+
+  .sidenav .closebtn {
+	  font-size: 30px !important;
+  }
+}
+
+/* Responsive styling for tablets including the hybrids such as iPad Pro and Windows devices */
+@media only screen and (max-width: 1100px) and (min-width: 768px)  {
+
+.footer_part1 {
+  height: 15vh !important;
+}
+input[type=text], input[type=password] {
+    width: 80% !important;
+    padding: 12px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: solid;;
+    background: #f1f1f1;
+}
+ .em, .em-svg {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+button {
+width: 25% !important;}
+}
+
+
+/* Styling for main text in about us page */
+.caption {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+color: #fff;
+}
+ /* Styling for launch page contents in people container */
+.textyp {
+position: relative;
+top:30%;
+word-wrap: break-word;
+text-align: center;
+font-size: 32px;
+color: #000;
+line-height: 1.6;
+}
+
+/* Styling for launch page contents in meetup container */
+.textym{
+position: relative;
+top:30%;
+word-wrap: break-word;
+text-align: center;
+font-size: 32px;
+color: #28282e;
+line-height: 1.6;}
+
+/* Styling for launch page contents in events container */
+.textye{position: relative;
+top:35%;
+word-wrap: break-word;
+text-align: center;
+font-size: 32px;
+color: #fff;
+line-height: 1.6;}
+
+/* Button Styling */
+button {
+background: transparent;
+border: transparent;
+}
+
+/* Home Page Parallax Effect */
+.parallax-home {
+    /* The image used */
+    background-image: url('images/event.jpeg');
+	
+    /* Full height */
+    height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Signup Page Parallax Effect */
+.parallax-signup {
+    /* The image used */
+    background-image: url('images/signup.jpeg');
+	
+    /* Full height */
+    height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+	text-decoration:none !important;
+}
+
+/* Signup text box style */
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 15px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: solid;
+    background: #f1f1f1;
+}
+
+/* Sign up placeholder style */
+input::placeholder {
+  font-size: 16px;
+}
+
+/* Continuation of Button gradient style */
+button {
+    background: linear-gradient(to bottom, #7254ff 0%, #B344FF 100%);
+    color: white !important;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 12%;
+    opacity: 0.9;
+}
+
+/* Div container styling */
+div {
+display: block;
+overflow: hidden;
+}
+
+/* Sign up page form styling */
+form {
+text-align: center;
+top: 15%;
+position: relative;}
+
+/* Signup button size */
+.signupbtn {
+font-size: 16px !important;
+}
+
+/* Glyphicon styling */
+.fa {
+  padding: 10px !important;
+  font-size: 20px !important;
+  width: 40px !important;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 40%;
+}
+
+/* Navigation bar external links styling */
+.special-size {
+  font-size: 25px !important;
+  
+}
+ /* Glyphicons hover styling */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Facebook glyphicon styling */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter Glyphicon Styling */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+/* Instagram Glyphicon Styling */
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+/* Snapchat Glyphicon Styling */
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/*Footer Styling */
+.footer_part1 {
+	text-align: center;
+	font-weight: bold;
+	height: 13vh;
+	font-size: 20px;
+	/*background: linear-gradient(to right, #C695FF 0%, #9A88E8 20%, #A2AAFF 40%, #88A9E8 80%, #95D6FF 100%); */
+	background: black;
+	color: white;
+	padding-top: 1%;
+}
+
+/*Copyright part syling */
+.copyright {
+	text-align: center;
+	font-weight: bold;
+	height: 7vh;
+	font-size: 16px;
+	/*background: linear-gradient(to right, #C695FF 0%, #9A88E8 20%, #A2AAFF 40%, #88A9E8 80%, #95D6FF 100%); */
+	background: #eee;
+	color: black;
+	padding-top: 1%;
+}
+

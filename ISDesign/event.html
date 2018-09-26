@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Trouper</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+
+  <body ng-app="eventApp" ng-controller="myController">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+ <a class="navbar-brand" href="index.html"><img src="images/logo.png" style="width: 25%; height:25%; !important;"></img></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Events
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="editEvent.html">Edit</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href ng-click="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+
+          <div class="my-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" ng-src="{{ image }}" alt="profilePic"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">{{ eventName }}</a>
+                  </h4>
+                 
+                  <p class="card-text">{{ city }}</p>
+                  <p class="card-text">{{ State }}</p>
+				  <p class="card-text">{{ category }}</p>
+                  <p class="card-text">{{ eventDate }}</p>
+                </div>
+              </div>
+            </div>
+         
+
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9" style="height: 100vh;">
+
+<div class="my-4">
+          <h3>About</h3>
+          <p> {{ eventDesc }} </p>
+
+          <h3>Audience</h3>
+          <p>Nothing Yet.</p>
+        </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+      <!-- /.row -->
+<!-- <button class="btn btn-lg floating-btn" data-toggle="modal" data-target="#addModal" data-whatever="@mdo"><strong style="font-size:24px;">+</strong></button> -->
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add an event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Event Name</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Description</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+		  <div class="form-group">
+            <label for="message-text" class="col-form-label">Audience</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+		  <div class="form-group">
+            <label for="message-text" class="col-form-label">Category</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+		   <div class="form-group">
+            <label for="message-text" class="col-form-label">When</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+		  <div class="form-group">
+            <label for="message-text" class="col-form-label">Where</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-submit">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+
+<footer><div class="footer_part1">Do you <i class="em em-heart"></i> us?<br> <a href="http://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+<a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a><a href="http://www.snapchat.com" target="_blank" class="fa fa-snapchat-ghost"></a>
+<a href="http://www.instagram.com" target="_blank" class="fa fa-instagram"></a></div>
+<!-- Copyright part -->
+
+</footer><div class="copyright">&copy; Developed by Team 5 - ISTM 631 601: IS Design. All Rights Reserved.</div>
+      </div>
+      <!-- /.container -->
+<script>
+angular.module('eventApp', [])
+.controller('myController', function($scope, $http) {
+$scope.sessionEvent = localStorage.getItem("ename");
+   $http.get(, {
+  params: {
+    email: $scope.sessionEvent
+  }
+})
+   .then(function (response) 
+   {
+   $scope.records = response.data;
+   $scope.eventName = $scope.records.ename;
+   $scope.eventDesc = $scope.records.edesc;
+   $scope.city = $scope.records.city;
+   $scope.eventDate = $scope.records.dob
+   $scope.state = $scope.records.state;
+   $scope.image = $scope.records.image;
+   $scope.category = $scope.records.category;
+   });
+   
+   $scope.logout = function() {
+localStorage.clear();
+window.close();
+}
+})
+
+</script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

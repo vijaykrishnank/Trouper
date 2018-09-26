@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Trouper</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+  </head>
+
+  <body ng-app="myApp">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+ <a class="navbar-brand" href="index.html"><img src="images/logo.png" style="width: 25%; height:25%; !important;"></img></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Events
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="javascript:window.close();" ng-click="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" ng-controller="myController">
+
+      <div class="row">
+
+        <div class="col-lg-3">
+
+          <h3 class="my-4">Event Categories</h3>
+          <div class="list-group">
+            <a href="#" class="list-group-item">Super-Organizers</a>
+            <a href="#" class="list-group-item">Casual</a>
+            <a href="#" class="list-group-item">Professional</a>
+          </div>
+
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+          <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img class="d-block img-fluid" src="images/party.jpg" style="height:100%;width:100%" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="images/party2.jpeg" style="height:100%;width:100%" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid" src="images/sumba+.jpg" style="height:100%;width:100%" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-4" ng-repeat="x in event">
+              <div class="card h-100" style="box-shadow:3px 3px #d3d3d3;">
+                <a href="#"><img class="card-img-top" ng-src="{{x.image_link}}" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#" ng-model="eventName" ng-click="goToEvent()">{{ x.event_name }}</a>
+                  </h4>
+                
+                  <p class="card-text" ng-model="eventDesc">{{ x.event_ldesc}}</p>
+                </div>
+                <div class="card-footer">
+				<p class="card-text">{{ x.event_date }}</p>
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+				  
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="images/coldplay.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                     <a href="#" ng-model="event2"></a>
+                  </h4>
+                
+                  <p class="card-text" ng-model="desc2"></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="images/career.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                     <a href="#" ng-model="event3"></a>
+                  </h4>
+                
+                  <p class="card-text" ng-model="desc3"></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="images/row.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                     <a href="#" ng-model="event4"></a>
+                  </h4>
+                
+                  <p class="card-text" ng-model="desc4"></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="images/zumba.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                     <a href="#" ng-model="event5"></a>
+                  </h4>
+                
+                  <p class="card-text" ng-model="desc5"></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="images/chapter.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                     <a href="#" ng-model="event6"></a>
+                  </h4>
+                
+                  <p class="card-text" ng-model="desc6"></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">&#9733; &#9733; &#9733; &#9734 &#9734;</small>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+      <!-- /.row -->
+<button class="btn btn-lg floating-btn" data-toggle="modal" data-target="#addModal" data-whatever="@mdo"><strong style="font-size:20px;">+</strong></button>
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add an event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Event Name</label>
+            <input type="text" class="form-control" id="recipient-name" ng-model="ename" required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Description</label>
+            <textarea class="form-control" id="message-text" ng-model="edesc" required></textarea>
+          </div>
+		  <div class="form-group">
+    <label for="exampleInputFile">Upload Image</label>
+    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" ng-model="eimage" required>
+    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+  </div>
+		    <div class="form-group">
+  <label for="example-date-input">When</label>
+ 
+    <input class="form-control" type="date" id="example-date-input" ng-model="edate" required>
+
+</div>
+
+		  <div class="form-group">
+            <label for="message-text" class="col-form-label">City</label>
+            <input type="text" class="form-control" id="recipient-name" ng-model="city" required>
+          </div>
+		  <div class="form-group">
+    <label for="exampleSelect1">State</label>
+    <select class="form-control" id="exampleSelect1" ng-model="state" ng-options="x for x in state" required>
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="exampleSelect1">Event Category</label>
+    <select class="form-control" id="exampleSelect1" ng-model="category" ng-options="x for x in category" required>
+    </select>
+  </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-submit" ng-click="createEvent()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+
+<footer><div class="footer_part1">Do you <i class="em em-heart"></i> us?<br> <a href="http://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+<a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a><a href="http://www.snapchat.com" target="_blank" class="fa fa-snapchat-ghost"></a>
+<a href="http://www.instagram.com" target="_blank" class="fa fa-instagram"></a></div>
+<!-- Copyright part -->
+
+</footer><div class="copyright">&copy; Developed by Team 5 - ISTM 631 601: IS Design. All Rights Reserved.</div>
+      </div>
+      <!-- /.container -->
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope, $http) {
+
+   $http.get("readRecords.php")
+   .then(function (response) {$scope.event = response.data; 
+   console.log(response.data);
+   $scope.event1 = $scope.event[0].event_name;
+   console.log($scope.event1);
+  $scope.desc1 = $scope.event[0].event_ldesc;});
+  
+  $http.get("to get states")
+   .then(function (response) 
+   {
+   $scope.state = response.data;
+   
+   
+   });
+   
+   $http.get("to get categories")
+   .then(function (response) 
+   {
+   $scope.category = response.data;
+   
+   
+   });
+   
+   $scope.createEvent = function () {
+
+var request = $http({
+    method: "post",
+    url: "",
+    data: {
+		eventname: $scope.ename,
+		leventdescription: $scope.edesc,
+		eventdate: $scope.edate,
+		state: $scope.state,
+		category: $event.ecategory,
+		image: $scope.imagebase64
+    },
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+}).then(function successCallback(response) {
+    // this callback will be called asynchronously
+	localStorage.removeItem("ename");
+	localStorage.setItem("ename",$scope.edesc);
+	window.open("event.html");
+    // when the response is available
+  });
+}
+
+$scope.goToEvent = function () {
+localStorage.removeItem("ename");
+localStorage.setItem("ename",$scope.eventName);
+	window.open("event.html");
+}
+
+$scope.logout = function() {
+localStorage.clear();
+}
+
+}
+);
+</script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

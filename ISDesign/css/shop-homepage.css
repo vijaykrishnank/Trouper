@@ -1,0 +1,128 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+      font-family: 'Raleway', sans-serif !important;
+}
+
+.card-body {
+	padding: 0.60rem !important;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.bg-dark {
+	    background: linear-gradient(to right, #7254ff 0%, #B344FF 100%);
+}
+
+.bg-footer {
+	    background: black;
+}
+
+.navbar-toggler {
+	position: absolute;
+	right:1%;
+}
+
+.my-4 {
+	margin-top:2rem !important;
+	margin-bottom:2rem !important;
+}
+
+.btn-close {
+	background: black;
+	color: white;
+}
+
+.btn-submit {
+	background: linear-gradient(to right, #7254ff 0%, #B344FF 100%);
+	color: white;
+}
+
+.floating-btn {
+	 background: linear-gradient(to bottom, #7254ff 0%, #B344FF 100%);
+	border-radius:50%;
+	position:fixed;
+	right: 5%;
+	bottom: 5%;
+	color:white !important;
+	height: 7vh;
+	width: 7vh;
+}
+
+/*Footer Styling */
+.footer_part1 {
+	text-align: center !important;
+	font-weight: bold;
+	height: 18vh !important;
+	font-size: 20px;
+	/*background: linear-gradient(to right, #C695FF 0%, #9A88E8 20%, #A2AAFF 40%, #88A9E8 80%, #95D6FF 100%); */
+	background: black;
+	color: white !important;
+	padding-top: 1%;
+}
+.copyright {
+	text-align: center;
+	font-weight: bold;
+	height: 5vh !important;
+	font-size: 16px;
+	/*background: linear-gradient(to right, #C695FF 0%, #9A88E8 20%, #A2AAFF 40%, #88A9E8 80%, #95D6FF 100%); */
+	color: black !important;
+	background-color: white !important;
+	padding-top: 1%;
+}
+
+/* Facebook glyphicon styling */
+.fa-facebook {
+  background: #3B5998;
+  color: white !important;
+}
+
+/* Twitter Glyphicon Styling */
+.fa-twitter {
+  background: #55ACEE;
+  color: white !important;
+}
+
+/* Instagram Glyphicon Styling */
+.fa-instagram {
+  background: #125688;
+  color: white !important;
+}
+
+/* Snapchat Glyphicon Styling */
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white !important;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-youtube {
+  background: #ff0000;
+  color: white !important;
+
+}
+ /* Glyphicons hover styling */
+.fa:hover {
+    opacity: 0.7;
+	text-decoration: none !important;
+}
+/* Glyphicon styling */
+.fa {
+  padding: 10px;
+  font-size: 20px !important;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 40%;
+}
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<title>Trouper</title>
+<head>
+<!-- All the stylesheets and javascript used are declared here  -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+<link href="Team05.css" rel="stylesheet">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+<script src="Team05.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+<!-- Navbar set up -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#home" onclick="closeNav()">Home</a>
+  <a href="#people" onclick="closeNav()">People</a>
+  <a href="#meetup" onclick="closeNav()">Meetup</a>
+  <a href="#events" onclick="closeNav()">Events</a>
+  <a href="#signup" onclick="closeNav()">Start Troupin!</a>
+  <a href="Team05_company.html" onclick="closeNav()">Company</a>
+  <div>
+  	<a href="http://www.whatisrss.com/" target="_blank"> <i class=" special-size fa fa-rss"></i></a>
+        <a href="https://www.w3.org/TR/html/" target="_blank"> <i class=" special-size fa fa-html5"></i></a>
+        <a href="https://itunes.apple.com/us/genre/ios/id36?mt=8" target="_blank"> <i class=" special-size fa fa-apple"></i></a>
+        <a href="https://play.google.com/store?hl=en" target="_blank"> <i class="special-size fa fa-android"></i></a>
+        <a href="https://www.microsoft.com/en-us/store/apps/windows" target="_blank"> <i class="special-size fa fa-windows"></i></a>
+</div>
+</div>
+<div>
+<!-- Parallax Home -->
+<div id="home" class="parallax-home"></div>
+<a style="position:absolute;left:1%;top:1%;" href="index.html"><!-- <p style="color:#fff !important; font-size:36px; margin:0 !important;">Trouper</p> --><img src="images/logo white.png" style="width: 30%; height:30%; margin:0 !important;"></img></a>
+<a style="font-size:30px;cursor:pointer;position:fixed;right:1%;top:0;color:black !important;" onclick="openNav()">&#9776;</a>
+<div class="caption">People. Meetups. Events.<br><a href="#signup"><button class="signupbtn">Start Troupin!</button></a></div>
+</div>
+
+<!-- People container -->
+<div id="people" style="height:100%; background:linear-gradient(to bottom, #00ffcc 0%, #00ccff 100%)">
+   <p class="textyp"><i class="special em em-man-tipping-hand"></i><br>	&ldquo; Tall, short, introvert, extrovert, outgoing, silent - We help you find your right set of people.&rdquo;</p>
+</div>
+<!-- Meet up container -->
+<div id="meetup" style="height: 100%; background: linear-gradient(to bottom, #00ccff 0%, #7254ff 100%);">
+<p class="textym"><i class="special em em-coffee"></i><br>	&ldquo; Gym, coffee shop, group study, netflix, fraternity, sorrority - Post/Attend absolutely any kind of meet-up! &rdquo;</p></div>
+<!-- Events container -->
+<div id="events" style="height:100%; background: linear-gradient(to bottom, #7254ff 0%, #B344FF 100%);">
+<p class="textye"><i class="special em em-man-with-bunny-ears-partying"></i><i class="special em em-woman-with-bunny-ears-partying"></i><br>	&ldquo; Music festival, career fair, celebration, parties etc - We have it all covered!&rdquo;</p></div>
+
+<!-- Sign up container -->
+<div id="signup" class="parallax-signup">
+<form style="margin:30px;" id="login" name="loginForm" novalidate>
+<p style="color:#28282e; font-size: 24px;">Login</p>
+<div class="form-group">
+<input style="width:35%" type="text" placeholder="Enter your e-mail address" ng-model="email" name="email" ng-pattern="/^\S+@\S+\.\S+$/i" required></input>
+  <p style="color:red" ng-show="loginForm.email.$invalid && loginForm.email.$dirty"><strong>Please enter a valid email address</strong></p><br>
+<input style="width:35%" type="password" placeholder="Enter your password" name="password" ng-model="password" required></input>
+  <p style="color:red" ng-show="try"><Strong>Incorrect Credentials</strong></p><br>
+<button type="submit" style="background:black; color:white; font-size:16px; margin-bottom:0.5vh;" ng-click="submitVal()">Submit</button>
+<button class="signupbtn"><a href="ISDesign/signup.html" style="color:white !important;" target="_blank">New User?</a></button>
+</div>
+</form>
+</div>
+
+
+
+
+<!-- Footer part -->
+<footer><div class="footer_part1">Do you <i class="em em-heart"></i> us?<br> <a href="http://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+<a href="http://www.twitter.com" target="_blank" class="fa fa-twitter"></a><a href="http://www.snapchat.com" target="_blank" class="fa fa-snapchat-ghost"></a>
+<a href="http://www.instagram.com" target="_blank" class="fa fa-instagram"></a></div>
+<!-- Copyright part -->
+<div class="copyright">&copy; Developed by Team 5 - ISTM 631 601: IS Design. All Rights Reserved.</div>
+</footer>
+
+<!-- Script used for side bar navigation -->
+<script>
+angular.module('myApp', [])
+.controller('myController', function($scope, $http) {
+   $http.get("readLogin.php")
+   .then(function (response) {$scope.records = response.data; 
+   $scope.submitVal = function() {
+   for(var i in $scope.records){
+   if($scope.records[i].email_address == $scope.email && $scope.records[i].password == $scope.password){
+   flag = true; console.log(flag);
+window.open("ISDesign/index.html");
+   break;} else { $scope.try = true;
+   
+   } }
+   }
+   });
+   
+})
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+ <!-- End of Body -->
+</body>
+</html> 
